@@ -1,0 +1,32 @@
+{
+  "name": "node-rest",
+  "version": "1.0.0",
+  "description": "ES6 with node",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "start": "nodemon src/app.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/booybooy/node-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/booybooy/node-rest/issues"
+  },
+  "homepage": "https://github.com/booybooy/node-rest",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.9.2"
+  }
+}
