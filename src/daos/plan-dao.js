@@ -1,21 +1,15 @@
-'use strict';
-
 import uuid from 'node-uuid';
+import Plan from '../models/plan';
 
 let plans = [];
 
-export default class PlanDao {
-    constructor() {
-        this._plans = plans;
-    }
+export function getAll() {
+    return plans;
+}
 
-    getAll() {
-        return this._plans;
-    }
-    
-    create(plan) {
-        plan.id = uuid.v4();
-        this._plans.push(plan);
-        return plan;
-    }
+export function create(plan) {
+    let newPlan = new Plan(plan);
+    newPlan.setId(uuid.v4());
+    plans.push(newPlan);
+    return newPlan;
 }

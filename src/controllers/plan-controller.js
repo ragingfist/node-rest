@@ -1,8 +1,6 @@
 import {Router} from 'express';
-import util from 'util';
-import PlanService from '../services/plan-service';
+import * as planService from '../services/plan-service';
 
-const planService = new PlanService();
 const router = Router();
 
 router.route('/')
@@ -10,8 +8,9 @@ router.route('/')
         .post(addPlan);
 
 function getPlans(req, res, next) {
-    console.log("In getPlan");
-    res.json(planService.getPlans());
+    let plans = planService.getPlans();
+    console.log("In getPlan : " + plans);
+    res.json(plans);
 }
 
 function addPlan(req, res, next) {
