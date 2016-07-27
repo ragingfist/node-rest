@@ -10,7 +10,7 @@ describe('API end to end tests.', function() {
     let apiUrl = "http://localhost:8080/api";
 
     describe('Hello World', function() {
-        it('should return Hello World.', function(done) {
+        it('/api should return Hello World.', function(done) {
 
             request(apiUrl)
                 .get('/')
@@ -25,6 +25,8 @@ describe('API end to end tests.', function() {
                 });
 
         });
+
+
     });
 
     describe('#indexOf()', function() {
