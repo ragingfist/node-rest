@@ -8,6 +8,8 @@ import morgan from 'morgan';
 import uuid from 'node-uuid';
 import winston from 'winston';
 
+console.log("hello there @ !!!");
+
 configureWinston();
 
 var app = express();
@@ -29,19 +31,15 @@ app.use('/api', routes);
 // error handling
 app.use(apiErrorHandler);
 
-var server = app.listen(8080, function() {
-    var host = server.address().address;
-    host = (host === '::' ? 'localhost' : host);
-    var port = server.address().port;
+export default app;
 
-    console.log(`Listening at ${host}:${port} ...`);
-});
+
 
 function apiErrorHandler(err, req, res, next) {
-    console.log(`Logged:`);
-    console.log(err.name);
+    console.log(`Logged: ${err.name}`);
 
     let statusCode = 500;
+
     switch (err.name) {
         case 'ValidationErrors':
             statusCode = 400;
