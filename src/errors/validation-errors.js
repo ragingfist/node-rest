@@ -24,3 +24,8 @@ export class RequiredError extends AbstractError {
     }
 }
 
+export class ServerError extends AbstractError {
+    constructor() {
+        super("A server error has occurred.");
+    }
+}
