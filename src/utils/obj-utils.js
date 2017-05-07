@@ -4,6 +4,6 @@
 
 export function isUndefOrNullOrEmpty(obj) {
     return typeof obj === 'undefined'
-        || obj == null
+        || obj === null
         || (Object.keys(obj).length === 0 && obj.constructor === Object);
 }

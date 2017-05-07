@@ -3,12 +3,8 @@
  */
 import log from 'winston';
 import app from './app';
-import db from './models/db';
 
-app.set('port', process.env.PORT || 8080);
-
-db.sequelize.sync().then(function () {
-    var server = app.listen(app.get('port'), function() {
-        log.info('Express server listening on port ' + server.address().port);
-    });
+app.set('port', process.env.PORT || 3000);
+let server = app.listen(app.get('port'), function() {
+   log.info('Express server listening on port ' + server.address().port);
 });

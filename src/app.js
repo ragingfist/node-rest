@@ -1,9 +1,9 @@
 "use strict";
 
 import express from 'express';
-import path from 'path';
 import bodyParser from 'body-parser';
-import routes from './all-routes';
+import apiRoutes from './api-routes';
+import miscRoutes from './misc-routes';
 import morgan from 'morgan';
 import uuid from 'node-uuid';
 import winston from 'winston';
@@ -24,16 +24,14 @@ morgan.token('id', function(req, res) {
 });
 app.use(morgan(':id :date[iso] :method :url :status - :response-time[3] ms - :res[content-length]'));
 
-
 // add routes
-app.use('/api', routes);
+app.use('/', miscRoutes);
+app.use('/api', apiRoutes);
 
 // error handling
 app.use(apiErrorHandler);
 
 export default app;
-
-
 
 function apiErrorHandler(err, req, res, next) {
     console.log(`Logged: ${err.name}`);

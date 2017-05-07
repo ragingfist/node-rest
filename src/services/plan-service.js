@@ -15,7 +15,7 @@ export function addPlan(plan) {
 
 function _validatePlan(plan) {
     let errors = [];
-    if (plan == null || Utils.isUndefOrNullOrEmpty(plan)) {
+    if (Utils.isUndefOrNullOrEmpty(plan)) {
         errors.push(new RequiredError('Plan'));
     }
 

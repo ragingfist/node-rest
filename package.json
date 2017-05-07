@@ -2,10 +2,10 @@
   "name": "node-rest",
   "version": "1.0.0",
   "description": "ES6 with node",
-  "main": "src/app.js",
+  "main": "src/server.js",
   "scripts": {
     "build": "babel src -d build",
-    "start": "nodemon src/app.js --exec babel-node",
+    "start": "nodemon src/server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,7 +1,6 @@
 import {Router} from 'express';
 import * as planService from '../services/plan-service';
 import winston from 'winston';
-import AbstractError from '../errors/error';
 
 const router = Router();
 

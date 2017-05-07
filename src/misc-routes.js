@@ -1,5 +1,4 @@
 import {Router} from 'express';
-import planRoutes from './controllers/plan-controller';
 
 const router = Router();
 
@@ -7,8 +6,9 @@ const router = Router();
 router.get('/', function(req, res) {
     res.send('Hello world!');
 });
-
-// API routes
-router.use('/plans', planRoutes);
+// health check
+router.get('/health', function(req, res) {
+    res.send('OK');
+});
 
 export default router;
