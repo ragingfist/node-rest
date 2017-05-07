@@ -1,1 +1,2 @@
-Restful web service with Node.js and ES6
+# node-rest
+A REST API with Node.js
